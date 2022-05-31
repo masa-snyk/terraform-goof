@@ -24,5 +24,5 @@ variable "s3_acl" {
 
 variable "env" {
   type = string
-  default = "dev"
+  default = "masa-demo"
 }
