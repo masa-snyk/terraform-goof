@@ -9,5 +9,5 @@ set -x
 #		exit 1
 #fi
 
-tf plan -out=tf.tfplan 
-tf show -json tf.tfplan  > tfplan.json
+terraform plan -out=tf.tfplan 
+terraform show -json tf.tfplan  > tfplan.json

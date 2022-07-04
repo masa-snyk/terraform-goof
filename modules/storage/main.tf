@@ -43,7 +43,8 @@ resource "aws_kms_key" "snyk_db_kms_key" {
 }
 
 resource "aws_db_instance" "snyk_db" {
-  name                      = "snyk_db_${var.environment}"
+  #db_name                      = "snyk-db-${var.environment}"
+  db_name                      = "${var.environment}"
   allocated_storage         = 20
   engine                    = "postgres"
   engine_version            = "10.20"
@@ -59,7 +60,7 @@ resource "aws_db_instance" "snyk_db" {
   final_snapshot_identifier = "snyk-db-${var.environment}-db-destroy-snapshot"
   kms_key_id                = aws_kms_key.snyk_db_kms_key.arn
   tags = merge(var.default_tags, {
-    Name = "snyk_db_${var.environment}"
+    Name = "snyk-db-${var.environment}"
   })
 }
 
