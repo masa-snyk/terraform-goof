@@ -9,14 +9,6 @@ variable "ami" {
   default     = "ami-017c2841afa495c38"
 }
 
-variable "access_key" {
-  type = string
-}
-
-variable "secret_key" {
-  type = string
-}
-
 variable "s3_acl" {
   type    = string
   default = "public-read-write"

@@ -1,29 +1,8 @@
-/*
-terraform {
-  cloud {
-    organization = "partner-snyk"
-
-    workspaces {
-      name = "terraform-goof-CLI"
-    }
-  }
-
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0"
-    }
-  }
-}
-*/
-
 provider "aws" {
   region                      = var.region
   skip_credentials_validation = true
   skip_requesting_account_id  = true
   skip_metadata_api_check     = true
-  #  access_key                  = var.access_key
-  #  secret_key                  = var.secret_key
 }
 
 resource "aws_iam_account_password_policy" "strict" {
@@ -76,6 +55,7 @@ module "instance" {
   tags = {
     Terraform   = "true"
     Environment = var.env
+		Owner = "snyk"
   }
 }
 
