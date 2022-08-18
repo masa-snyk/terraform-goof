@@ -1,13 +1,14 @@
+
 //Ignoring Secrets
 secret.auto.tfvars
 *.tfvars
+*.tfplan
 
 //Ignore IDE files
 .idea/
 
 //Ignore terraform config files
 .terraform/*
-.*
 
 // Ignore the .dccache file for Snyk Code Analysis
 .dccache
@@ -16,3 +17,5 @@ secret.auto.tfvars
 *.tfstate
 *.json
 *.tfplan
+*.backup
+*.html
