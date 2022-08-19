@@ -55,7 +55,8 @@ module "instance" {
   tags = {
     Terraform   = "true"
     Environment = var.env
-		Owner = "snyk"
+    Owner = "snyk"
+    Date = "2022/08/19"
   }
 }
 
