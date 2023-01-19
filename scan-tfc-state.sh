@@ -26,6 +26,12 @@ snyk iac describe --only-managed \
 	--tfc-token="${TFC_TOKEN}" \
 	--tfc-endpoint="https://${TFC_HOSTNAME}/api/v2" 
  
+snyk iac describe --only-unmanaged \
+	--html-file-output="unmanaged-${OUTPUT_HTML}" \
+	--from="tfstate+tfcloud://${WS_ID}" \
+	--tfc-token="${TFC_TOKEN}" \
+	--tfc-endpoint="https://${TFC_HOSTNAME}/api/v2" 
+
 snyk iac describe --all \
 	--html-file-output="all-${OUTPUT_HTML}" \
 	--from="tfstate+tfcloud://${WS_ID}" \
